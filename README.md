@@ -14,8 +14,8 @@ If you have a .csv from the CSHL digital repository, you must first use and you 
    	CHECK example_files folder for example input files:
    	CSHL digital repo file = 2023_07_06_CSHL_articles_2007-2022_from_IR
    	PMIDS_textfile = pmids_07_22.txt
-    	PubMed OpenAccess Database = oa_file_list.csv
-     	Output files to Download = output1_07_22_PMC.csv
+    PubMed_OpenAccess_Database = oa_file_list.csv
+    Files_to_Download = output1_07_22_PMC.csv
 
 3. With the .txt of PMIDs, you then use function isolate_rows_by_PMIDs(source_file = "PMIDs.txt", database = oa_file_list.csv, output_file = output1_07_22_PMC.csv), this will search through the entire oa database and return an output CSV containing downloadable links. 
 
