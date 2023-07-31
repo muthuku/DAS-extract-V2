@@ -11,17 +11,17 @@ ________________________________________________________________________________
 # STEP 1- Grabbing full text XMLs from the PubMed OA data base (all python functions are in the file all_PMC_code.py)
 If you have a .csv from the CSHL digital repository, you must first use and you use function grab_PMIDs_from_csv(source_file=(CSHL Repo).csv, target_file = PMIDS.txt)
 
-   # CHECK example_files folder for example input files:
-   
-   CSHL digital repo file = 2023_07_06_CSHL_articles_2007-2022_from_IR
-   
-   PMIDS_textfile = pmids_07_22.txt
+   	CHECK example_files folder for example input files:
+   	CSHL digital repo file = 2023_07_06_CSHL_articles_2007-2022_from_IR
+   	PMIDS_textfile = pmids_07_22.txt
+    	PubMed OpenAccess Database = oa_file_list.csv
+     	Output files to Download = output1_07_22_PMC.csv
 
-3. With the .txt of PMIDs, you then use function isolate_rows_by_PMIDs(source_file = "PMIDs.txt", database = oa_file_list.csv, output_file = anything.csv), this will search through the entire oa database and return an output CSV containing downloadable links. 
+3. With the .txt of PMIDs, you then use function isolate_rows_by_PMIDs(source_file = "PMIDs.txt", database = oa_file_list.csv, output_file = output1_07_22_PMC.csv), this will search through the entire oa database and return an output CSV containing downloadable links. 
 
-4. Using the output file from Step 2 (output_files_downloadable.csv), we now download folders containing figures, supplemental and full text articles. This is done using download_PMC(source_file = output_files_downloadable.csv, folder=full_texts. This leads to an output of a directory/folder containing the zipped (.tar.gz) versions of the PMC files. 
+4. Using the output file from Step 2 (output_files_downloadable.csv), we now download folders containing figures, supplemental and full text articles. This is done using download_PMC(source_file = output1_07_22_PMC.csv, folder=full_texts. This leads to an output of a directory/folder containing the zipped (.tar.gz) versions of the PMC files. 
 	
-		A. Each downladed file will look like PMC{ID Number}.tar.gz, using extract_files function to unzip them
+		A. Each downladed file will look like PMC{ID Number}.tar.gz, USE extract_files function to unzip them
 
 6. use function extract_files(input = folder of zipped files) to unzip and untar the zipped files
 
