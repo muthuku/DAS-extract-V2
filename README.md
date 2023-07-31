@@ -65,7 +65,7 @@ dir_in = "input" #this is the directory where your input files are located - fil
 
 annotated_file_name = "ML_input_test_annotations.csv"  # Annotated data- this will not change, but user can modify it to contain more annotated entries, currently only has 500 
 
-input_file_name = "ML_input_ das_statements.csv" # file containing DAS to be classified, follow the format of the example file included in Github repo "das_statements.csv"
+input_file_name = "ML_input_das_statements.csv" # file containing DAS to be classified, follow the format of the example file included in Github repo "ML_input_das_statements.csv"
 
 output_summary_file_all = "overview_models_parameters.csv" #this can be named as anything, or leave as is
 
