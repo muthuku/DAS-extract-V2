@@ -17,9 +17,11 @@ If you have a .csv from the CSHL digital repository, you must first use and you 
     PubMed_OpenAccess_Database = oa_file_list.csv
     Files_to_Download = output1_07_22_PMC.csv
 
-3. With the .txt of PMIDs, you then use function isolate_rows_by_PMIDs(source_file = "PMIDs.txt", database = oa_file_list.csv, output_file = output1_07_22_PMC.csv), this will search through the entire oa database and return an output CSV containing downloadable links. 
+3. With the .txt of PMIDs, you then use function isolate_rows_by_PMIDs(source_file = "PMIDs.txt", database = oa_file_list.csv, output_file = output1_07_22_PMC.csv), this will search through the entire oa database and return an output CSV containing downloadable links.
 
-4. Using the output file from Step 2 (output_files_downloadable.csv), we now download folders containing figures, supplemental and full text articles. This is done using download_PMC(source_file = output1_07_22_PMC.csv, folder=full_texts. This leads to an output of a directory/folder containing the zipped (.tar.gz) versions of the PMC files. 
+   		To download the oa_file_list.csv go to the Base FTP URL https://ftp.ncbi.nlm.nih.gov/pub/pmc/ and download the file. Update this file once every 3 weeks
+
+5. Using the output file from Step 2 (output_files_downloadable.csv), we now download folders containing figures, supplemental and full text articles. This is done using download_PMC(source_file = output1_07_22_PMC.csv, folder=full_texts. This leads to an output of a directory/folder containing the zipped (.tar.gz) versions of the PMC files. 
 	
 		A. Each downladed file will look like PMC{ID Number}.tar.gz, USE extract_files function to unzip them
 
