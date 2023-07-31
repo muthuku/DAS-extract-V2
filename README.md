@@ -1,6 +1,6 @@
 # DAS-extract-V2
 Python based workflow to get full texts, article metadata, DAS and citation counts 
-# STEP 0= Dataset 
+# STEP 0 - Dataset 
 In order to run this computational workflow, you will need a list of PubMed IDs or PubMedCentral IDs. This can be done:
 
 1. Go to the CSHL Digital Repository, filter by year, author and journal article, export your search results as a EP3 XML and then import the data into an Excel .csv (UTF-8) that contains a list of PMIDs
@@ -38,7 +38,9 @@ Using the PMC_OA_DAS_parser.py Python file, you can input the entire folder of f
 2. PMC_OA_DAS_parser_V2.py= searched through specific XML elements such as sec, notes, fn and attributes that contain "data-availability". This works for more recent articles (post 2016) because older articles don't have this specific section.
 ex. <sec sec-type="data-availability" id="s1"> 
 
-3. PMC_OA_DAS_parser_V3.py= similar to V2 but also includes more code to be able to extract DAS from older articles, by examining the full text of the XML element (sec, notes, bold, fn etc) that contains a DAS keyword - MOST ROBUST and MORE SPECIFIC THAN V1
+3. PMC_OA_DAS_parser_V3.py= similar to V2 but also includes more code to be able to extract DAS from older articles, by examining the full text of the XML element (sec, notes, bold, fn etc) that contains a DAS keyword - MOST ROBUST and MORE SPECIFIC THAN V1 and V2
+
+   		Check PMC_parser_output.csv in the example_files folder to see an example of the output of this code. 
 __________________________________________________________________________________________________________________________________________________
 
 # STEP3- grabbing citation counts from the SCOPUS database (accessible via CSHL library access)
@@ -51,17 +53,20 @@ df2 = df1['DOI']
 df1['citation_count'] = citation_count(df2)
 
 citations = citation_count(df1['citation_count'])
+
+	Check citation_count_output.csv in example_files folder to see an example of the output.
 __________________________________________________________________________________________________________________________________________________
 # STEP 4 - ML + NLP classifier Colviazza et al, 2020 - This code can be used on any list of DAS, even the ones extracted using different methods
 1. Run the python file classify_das2.py, you must modify the inputs/outputs section of it before running the code. Keep almost all the parameters as the default categories, except for "Do you want to combine the category labels (1 with 2, 4 with 5)?" no 
 # Input descriptions
 dir_out = "output1_175annotations" #this can be named as anything
 
-dir_in = "/Users/muthuku/Downloads/alan-turing-institute-das-public-5581446_modify/dataset/das_classifier/input" #this is the directory where your input files are located - file of statements, and annotated data for training and testing of the ML model 
+dir_in = "input" #this is the directory where your input files are located - file of statements, and annotated data for training and testing of the ML model 
 
-annotated_file_name = "test_annotations.csv"  # Annotated data- this will not change, but user can modify it to contain more annotated entries, currently only has 500 
+annotated_file_name = "ML_input_test_annotations.csv"  # Annotated data- this will not change, but user can modify it to contain more annotated entries, currently only has 500 
 
-input_file_name = "das_statements.csv" # file containing DAS to be classified, follow the format of the example file included in Github repo "das_statements.csv"
+input_file_name = "ML_input_ das_statements.csv" # file containing DAS to be classified, follow the format of the example file included in Github repo "das_statements.csv"
+
 output_summary_file_all = "overview_models_parameters.csv" #this can be named as anything, or leave as is
 
 2. Lastly, you can merge the classified DAS statements CSV with the original CSV output to get the final output CSV with all data included for analysis purposes
@@ -70,6 +75,8 @@ file1 = '/Users/muthuku/Desktop/og_df_with_citations1.csv'
 file2 = '/Users/muthuku/Downloads/alan-turing-institute-das-public-5581446/output_full1722/Classified_SVM_combined_labels_yes-coding-approach1-stopwords-no-uniformprior_yes-stemming_yes-test_no.csv'
 
 df3 = merge_og_classify_dfs(file1, file2)
-df3.to_csv("final_output.csv", encoding = "utf-8")
+df3.to_csv("MERGED_final_output.csv", encoding = "utf-8")
+
+	Check example_files folder for ML_output_classified_DAS.csv and merged_final_output.csv for the output of these steps.
 
 
