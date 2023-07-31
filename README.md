@@ -11,21 +11,21 @@ ________________________________________________________________________________
 # STEP 1- Grabbing full text XMLs from the PubMed OA data base (all python functions are in the file all_PMC_code.py)
 If you have a .csv from the CSHL digital repository, you must first use and you use function grab_PMIDs_from_csv(source_file=(CSHL Repo).csv, target_file = PMIDS.txt)
 
-   check example_files folder for example input files:
+   # CHECK example_files folder for example input files:
    
    CSHL digital repo file = 2023_07_06_CSHL_articles_2007-2022_from_IR
-
+   
    PMIDS_textfile = pmids_07_22.txt
 
 3. With the .txt of PMIDs, you then use function isolate_rows_by_PMIDs(source_file = "PMIDs.txt", database = oa_file_list.csv, output_file = anything.csv), this will search through the entire oa database and return an output CSV containing downloadable links. 
 
 4. Using the output file from Step 2 (output_files_downloadable.csv), we now download folders containing figures, supplemental and full text articles. This is done using download_PMC(source_file = output_files_downloadable.csv, folder=full_texts. This leads to an output of a directory/folder containing the zipped (.tar.gz) versions of the PMC files. 
 	
- 	a. Each downladed file will look like PMC{ID Number}.tar.gz, using extract_files function to unzip them
+		A. Each downladed file will look like PMC{ID Number}.tar.gz, using extract_files function to unzip them
 
-5. use function extract_files(input = folder of zipped files) to unzip and untar the zipped files
+6. use function extract_files(input = folder of zipped files) to unzip and untar the zipped files
 
-6. Use function get_nxml(source_folder = folder of unzipped files,target_folder = file where full text xmls are,file_extension = .nxml/.pdf/.xml)
+7. Use function get_nxml(source_folder = folder of unzipped files,target_folder = file where full text xmls are,file_extension = .nxml/.pdf/.xml)
 __________________________________________________________________________________________________________________________________________________
 
 # STEP 2- Parsing through xmls and populate table with article metadata and DAS
