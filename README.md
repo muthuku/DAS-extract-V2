@@ -1,5 +1,7 @@
 # DAS-extract-V2
-Python based workflow to get full texts, article metadata, DAS and citation counts 
+Python based workflow to get full texts, article metadata, DAS and citation counts. Install all required packages with the code below. 
+
+	pip install -r requirements.txt
 # STEP 0 - Dataset 
 In order to run this computational workflow, you will need a list of PubMed IDs or PubMedCentral IDs. This can be done:
 
