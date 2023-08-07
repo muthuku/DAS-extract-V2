@@ -20,4 +20,5 @@ collections
 sklearn
 random
 codecs
+gensim
 csv
