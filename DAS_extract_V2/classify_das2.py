@@ -170,7 +170,7 @@ skip_model5 = args.skip_model5
 #     skip_model5 = skip_model5_default
 
 # Directory and file names:
-dir_out = "output1_175annotations"
+dir_out = "example_files/ML_output"
 dir_in = "example_files/ML_input"
 annotated_file_name = "ML_input_test_annotations.csv"  # Annotated data
 input_file_name = "ML_input_das_statements.csv"
