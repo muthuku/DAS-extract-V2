@@ -25,9 +25,9 @@ def grab_PMIDs_from_csv(source_file, target_file):
 	extracted_PMID.replace('', np.nan, inplace=True)
 	extracted_PMID.dropna(inplace=True)
 	filtered_PMIDs = [pmid for pmid in extracted_PMID if pmid.isdigit()]
-	filtered_df = pd.DataFrame(filtered_PMIDs)
+	filtered_df = pd.DataFrame(filtered_PMIDs, columns=["PMIDs"])
 	# Save the extracted URLs to the target file
-	filtered_df.to_csv(target_file, header=None, index=None)
+	filtered_df.to_csv(target_file, header=True, index=None)
 
 def isolate_rows_by_PMID(source_file, database, output_file):
 	'''
