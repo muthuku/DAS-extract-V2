@@ -19,7 +19,7 @@ If you have a .csv from the CSHL digital repository, you must first use and you 
     PubMed_OpenAccess_Database = oa_file_list.csv
     Files_to_Download = output1_07_22_PMC.csv
 
-3. With the .txt of PMIDs, you then use function isolate_rows_by_PMIDs(source_file = "PMIDs.txt", database = oa_file_list.csv, output_file = output1_07_22_PMC.csv), this will search through the entire oa database and return an output CSV containing downloadable links. Download this file into the example_files in your local directory. 
+3. With the .txt of PMIDs, you then use function isolate_rows_by_PMIDs(source_file = "PMIDs.txt", database = oa_file_list.csv, output_file = output1_07_22_PMC.csv), this will search through the entire oa database and return an output CSV containing downloadable links. Download this file into the example_files in your local directory using this link https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_file_list.csv
 
    		To download the oa_file_list.csv go to the Base FTP URL https://ftp.ncbi.nlm.nih.gov/pub/pmc/ and download the file. Update this file once every 3 weeks
 
@@ -45,7 +45,7 @@ ex. <sec sec-type="data-availability" id="s1">
    		Check PMC_parser_output.csv in the example_files folder to see an example of the output of this code.
 __________________________________________________________________________________________________________________________________________________
 # STEP 3 - ML + NLP classifier Colviazza et al, 2020 - This code can be used on any list of DAS, even the ones extracted using different methods
-Download large file glove.6B.50d.txt into your local directory version of ML_input in order to be able to run this section. 
+Download large file glove.6B.50d.txt into your local directory version of ML_input in order to be able to run this section. You can download it from https://github.com/alan-turing-institute/das-public/blob/v1.2/dataset/das_classifier/input/glove.6B.50d.txt.zip where you will see the file name.
 
 	To run this code, you must go into the classify_das2.py file and modify the inputs as described below. 
 # Input descriptions
