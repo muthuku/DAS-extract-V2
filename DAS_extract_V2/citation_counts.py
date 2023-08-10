@@ -62,9 +62,9 @@ def merge_og_classify_dfs(file1, file2):
 
 #merge DFs code 
 
-file1 = '/Users/muthuku/Desktop/og_df_with_citations1.csv'
-file2 = '/Users/muthuku/Downloads/alan-turing-institute-das-public-5581446/output_full1722/Classified_SVM_combined_labels_yes-coding-approach1-stopwords-no-uniformprior_yes-stemming_yes-test_no.csv'
+# file1 = '/Users/muthuku/Desktop/og_df_with_citations1.csv'
+# file2 = '/Users/muthuku/Downloads/alan-turing-institute-das-public-5581446/output_full1722/Classified_SVM_combined_labels_yes-coding-approach1-stopwords-no-uniformprior_yes-stemming_yes-test_no.csv'
 
-df3 = merge_og_classify_dfs(file1, file2)
-df3.to_csv("final_output.csv", encoding = "utf-8")
+# df3 = merge_og_classify_dfs(file1, file2)
+# df3.to_csv("final_output.csv", encoding = "utf-8")
           

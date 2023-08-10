@@ -52,7 +52,7 @@ def parse_xml_directory(directory):
 
 
 
-xml_directory = '/Users/muthuku/Desktop/final_xmls'
-df_2 = parse_xml_directory(xml_directory)
-print(df_2)
-df_2.to_csv("NLP_test.csv")
+# xml_directory = '/Users/muthuku/Desktop/final_xmls'
+# df_2 = parse_xml_directory(xml_directory)
+# print(df_2)
+# df_2.to_csv("NLP_test.csv")

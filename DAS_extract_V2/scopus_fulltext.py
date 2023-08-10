@@ -35,9 +35,9 @@ def fetch_and_save_full_text(doils, api_key, output_folder='output'):
 
 
 apikey = '5a1dd9dc03af1a475c71361d4933f453'
-scopus_doi = pd.read_csv('/Users/muthuku/Downloads/scopus.csv', encoding = "utf-8")
+#scopus_doi = pd.read_csv('/Users/muthuku/Downloads/scopus.csv', encoding = "utf-8")
 
-list_doi = scopus_doi['DOI'].values.tolist()
-print(list_doi)
+# list_doi = scopus_doi['DOI'].values.tolist()
+# print(list_doi)
 
-fetch_and_save_full_text(list_doi, apikey, output_folder='output_folder_scopus_test')
+# fetch_and_save_full_text(list_doi, apikey, output_folder='output_folder_scopus_test')
