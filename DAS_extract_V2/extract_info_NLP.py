@@ -7,7 +7,7 @@ import nltk
 from nltk.tokenize import sent_tokenize
 import re
 
-def parse_xml_directory(directory):
+def parse_xml_directory_NLP(directory):
 
 	xml_files = [os.path.join(directory, file) for file in os.listdir(directory) if file.endswith('.nxml')]
 	print(xml_files)

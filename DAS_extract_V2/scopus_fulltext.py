@@ -34,7 +34,7 @@ def fetch_and_save_full_text(doils, api_key, output_folder='output'):
 			print(f"Failed to retrieve the article {doi}. Status code: {response.status_code}")
 
 
-apikey = '5a1dd9dc03af1a475c71361d4933f453'
+#apikey = '5a1dd9dc03af1a475c71361d4933f453'
 #scopus_doi = pd.read_csv('/Users/muthuku/Downloads/scopus.csv', encoding = "utf-8")
 
 # list_doi = scopus_doi['DOI'].values.tolist()
